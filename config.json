@@ -1,0 +1,6 @@
+{
+  "token": "your token",
+  "ltckey": "ltc private key",
+  "ltc_address": "your ltc addy",
+  "prefix": "."  
+}
