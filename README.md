@@ -1,16 +1,16 @@
-# Litecoin-sender-selfbot
-A Discord Selfbot uses to send litecoin to a address
+# Litecoin-sender-bot
+A Discord Bot used to send litecoin to an address
 in python
 
 ## features
-> Send LTC : Send Litecoin to any LTC address directly from Discord.
+> Send LTC: Send Litecoin to any LTC address directly from Discord.
 
-> Check Balance : View the current balance of your Litecoin address.
+> Check Balance: View the current balance of your Litecoin address.
 
 
-> Receive Address : Get your Litecoin address for receiving payments.
+> Receive Address: Get your Litecoin address for receiving payments.
 
-> No need of any api keys!
+> No need for any api keys!
 
 ## How TO Use
 > download or clone this repo
