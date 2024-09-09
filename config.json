@@ -1,5 +1,5 @@
 {
   "bot_token": "your bot token",
-  "ltckey": "ltc private key",
+  "ltc_key": "ltc private key",
   "ltc_address": "your ltc addy"
 }
