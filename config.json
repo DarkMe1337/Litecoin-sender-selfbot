@@ -1,6 +1,5 @@
 {
-  "token": "your token",
+  "bot_token": "your bot token",
   "ltckey": "ltc private key",
-  "ltc_address": "your ltc addy",
-  "prefix": "."  
+  "ltc_address": "your ltc addy"
 }
