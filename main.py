@@ -87,17 +87,17 @@ async def balance(ctx, address: str):
 async def receive(ctx):
     await ctx.response.send_message(f"{ltc_addy}\n")
 
-
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @tree.command(name="send", description="Send LTC to a LTC address")
 @app_commands.describe(address="The LTC address to send to", amount="The amount of LTC to send")
 async def send(ctx, address: str, amount: float):
+    await ctx.defer()
     async with aiohttp.ClientSession() as session:
-        message = await ctx.response.send_message(f"Sending {amount}$ To {address}")
+        message = await ctx.followup.send(f"Sending {amount}$ To {address}")
         price_data, price_status = await fetch_json(session,"https://api.coingecko.com/api/v3/simple/price?ids=usd&vs_currencies=ltc")
         if price_status != 200:
-            await message.edit(
+            await message.reply(
                 content=f"Failed to retrieve the current price of LTC. Error {price_status}. Please try again later",
                 delete_after=5)
             return
@@ -111,7 +111,7 @@ async def send(ctx, address: str, amount: float):
             "receiver": address
         }
         async with session.post("https://litecoinapi-send.vercel.app/api/litecoin/send", json=payload) as transaction:
-            await message.edit(content=f"> Successfully Sent {amount}$ To {address}\n{await transaction.text()}")
+            await message.reply(content=f"> Successfully Sent {amount}$ To {address}\n{await transaction.text()}")
 
 
 client.run(bot_token)
