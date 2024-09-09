@@ -1,2 +1,2 @@
-discord.py-self==1.9.2
+discord.py==2.4.0
 requests
