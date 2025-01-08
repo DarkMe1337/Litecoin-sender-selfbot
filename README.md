@@ -22,5 +22,7 @@ in python
 > and run it
 
 
+### Tos
+> you have to cover the fee
 
 Made By DarkMe
